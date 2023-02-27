@@ -5,11 +5,34 @@ import { CartService } from './Services/cart.service';
 @Component({
   selector: 'app-root',
   template: `
-    <app-header [cart]="cart"></app-header>
-    <router-outlet>
-    </router-outlet>
+    <div class="display-phone-none">
+      <app-header [cart]="cart"></app-header>
+      <router-outlet>
+      </router-outlet>
+    </div>
+    <div class="display-phone-yes">
+      <h1>This app is too powerful for phone yet. Visit later.</h1>
+    </div>
   `,
-  styles: []
+  styles: [
+    `.display-phone-none {
+      display: none;
+    }
+
+    .display-phone-yes {
+      display: block;
+    }
+
+    @media only screen and (min-width: 768px) {
+      .display-phone-none {
+        display: block;
+      }
+      .display-phone-yes {
+        display: none;
+      }
+    }
+    `
+  ]
 })
 
 export class AppComponent implements OnInit {
