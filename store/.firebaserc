@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "tiempodestore": {
+      "hosting": {
+        "store": [
+          "tiempodestore"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "tiempodestore"
+  }
+}
